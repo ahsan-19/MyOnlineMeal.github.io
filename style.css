@@ -1,0 +1,489 @@
+/* {
+    margin auto works accurately when display is block */
+  /* in some places where we used classes in divs like container foruth eagaira here  we could have simpy used ids as wel since its unique  */
+
+   /* we can make utility classses where we can give values like font size and use in various tags. */
+   /* we shud better use section like home contact us wagiara sab usme ajyn */
+     /* 
+   navbar ke andr jo elements they unko display block krke padding di hai 
+     navbar ke peche jp black colour hai wo before selector use krke diya hai
+    background lgane ke liye pseduo selectors is better pratice
+}*/
+
+/* (vvvimp)
+jese client wala section hai usme hum chte hain ke jo logo bahir niklre wo khud ba khud neche chley jayn responsive wale mey hote jayen next lne mey uske liye we use flex wrap  
+
+another used is overflow-wrap: break-word; not used here*/
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+   
+    margin: 0px;
+    padding: 0px;
+
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.navbar{
+   
+    display: flex;
+    flex-direction: row;
+    font-family: 'Baloo Bhai', cursive;
+    position: fixed;
+    
+    /* to fix the shrinking of navbar: */
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+/* this code is pretty much whats most commonly used for backgrounds. opacity can be adjusted asame goes for background. and height wagaiara.  thats why had to make some changes accordingly in line 76 */
+.navbar::before{
+    content: "";
+    background-color: black;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* top left might not be needed some times */
+    top: 0px;
+    left: 0px;
+    z-index: -1;  /*  isse content upr ajayga aur color neche*/
+    opacity: 0.6;
+} 
+
+
+.buttons{
+    text-align: center;
+    height: 20px;
+    /* border: 2px solid white; */
+    margin: 10px;
+    padding: 5px;
+    width: 75px;
+}
+
+/* .buttons img{
+    width: 40px;
+    height: 40px;
+} */
+
+#button1{
+    border: none;
+    margin: -1px
+}
+.buttons a{
+    text-decoration: none;
+    color: white;
+}
+
+.buttons:hover {
+    border: 1px solid rgba(255, 255, 255, 0.808);
+}
+
+/* ----------navbar done. now home (remback)------------- */
+.backg1{
+    /* background: url('/images/FoodWebImg/bg1.jpg');
+    background-repeat: no-repeat;
+    background-size: 1556px 650px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 372px;
+    width: 100%
+
+}
+/* 
+ background lgane ke liye pseduo selectors is better pratice 
+instead of as we did in line 61 we cud have done 
+ background: url('../bg1.jpg') no-repeat center center/cover; 
+ in pseduo selector. this line also automattically sized the image  . here commmenting out now cuz ab adjustment ni hori */
+ .backg1::before{
+    content: "";
+    background:url('bg1.jpg') no-repeat center center/cover;
+    position: absolute;
+    height: 380px;
+    width: 100%;
+    z-index: -1;  
+    
+ }
+
+#remBack{
+   
+    width: 500 px ;
+    height: 418px;
+    display: flex;
+    align-items: center;
+}
+
+.text{
+    color: white;
+    /* border: 2px solid red; */
+    height: 214px;
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 16px;
+}
+.text h1{
+    margin: 11px;
+}
+
+.text p{
+    line-height: 23px;
+}
+#btn{
+    margin-top: 9px;
+    padding: 4px;
+    width: 120px;
+    border-radius: 4px;
+    border-color: white;
+    background-color: transparent;
+    color: white;
+}
+#btn:hover{
+    cursor: pointer;
+}
+
+/* remback done------------------------------------------------- */
+
+#lowerContainer{
+    /* border: 2px solid red; */
+    height: 350px;
+    
+}
+.boxContainer{
+    /* border: 2px solid red; */
+    width: 95vw;
+    height: 300px;
+    display: flex;
+    margin: 10px auto;
+    padding: 0px;
+    align-items: center;
+    /* justify-content: center; */
+
+}
+
+.boxes{
+    border: 3px solid red;
+    border-radius: 9px;
+    height: 290px;
+    width: 440px;
+    margin: 20px auto;
+    background-color: peachpuff
+
+}
+
+#lowerContainer h1{
+    margin: 10px auto;   text-align: center;
+    font-weight: bold;
+    
+}
+/* utility class */
+.b-img{ 
+    width: 182px;
+    height: 131px;
+    margin: 12px 12px 0px 120px
+}
+/*
+ #box-1 img{
+    width: 182px;
+    height: 131px;
+    margin: 12px 12px 0px 120px
+} 
+ #box-2 img{
+    width: 182px;
+    height: 131px;
+    margin: 12px 12px 0px 120px
+} 
+ #box-3 img{
+    width: 182px;
+    height: 131px;
+    margin: 12px 12px 0px 120px
+}
+ */
+#box-1 h3{
+    /* margin-top: 0px; */
+    text-align: center;
+    font-weight: bold;
+}
+
+#box-1 p{
+   
+    text-align: center;
+    
+}
+#box-2 h3{
+    /* margin-top: 0px; */
+    text-align: center;
+    font-weight: bold;
+}
+
+#box-2 p{
+   
+    text-align: center;
+    
+}
+#box-3 h3{
+    /* margin-top: 0px; */
+    text-align: center;
+    font-weight: bold;
+}
+
+#box-3 p{
+   
+    text-align: center;
+    
+}
+
+/* now clients section------------------------------------------- */
+#thirdContainer{
+   
+    margin-top: 25px;
+}
+
+#thirdContainer::before{
+    content: "";
+    background: url('bg.jpg') no-repeat center center/cover;
+    position: absolute;
+    height: 300px;
+    width: 100%;
+    z-index: -1; 
+     opacity: 0.75; 
+}
+
+.logos{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 250px;
+    /* border: 2px solid green; */
+    
+    align-items: center;
+    justify-content: center;
+}
+
+#thirdContainer h1{
+    margin: 12px auto;
+    font-weight: bold;
+    text-align: center;
+}
+
+.logo{
+    margin: 10px;
+}
+
+.logo img{
+    width: 75px;
+    height: 75px;
+    margin: 8px;
+}
+
+/* contact us form */
+
+
+#fourthContainer::before{
+   
+    content: "";
+    background:url('contact.jpg') no-repeat center center/cover;
+    position: absolute;
+    height: 763px;
+    width: 100%;
+    z-index: -1;  
+    opacity: 0.9;
+}
+
+/*{ apna form comment out krdia sara 30 lines
+ form{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.formm{
+   
+    margin: 1px auto;
+    padding: 1px;
+    font-weight: bold;
+    font-size: large;
+}
+.element{
+    height: 30px;
+    border-radius: 10px;
+    margin: 7px;
+    width: 721px
+}
+
+#mbox{
+
+width: 735px; height: 202px; 
+}
+#fbtn{
+    background-color: red;
+    color: white;
+} 
+}*/
+
+#fourthContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 34px;
+    height: 550px;
+}
+
+#fourthContainer input , #fourthContainer textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 9px;
+    font-size: 1.1rem;
+}
+
+#fourthContainer form{
+    width: 40%;
+}
+
+#fourthContainer label{
+    font-size: 1.3rem;
+    font-family:sans-serif;
+}
+
+/* footer */
+.center{
+    text-align: center;
+}
+.centerr{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* copied a utlity class from harry code */
+.h-primary{
+    font-family: 'Bree Serif', serif;
+    font-size: 3.8rem;
+    padding: 12px;
+}
+
+/* now we make responsive phone wali on separate sheet for better clearance underastanding and ease */
+
+@media only screen and (max-width: 972px) {
+
+    .body{
+        background-color : red
+    }
+    .boxContainer{
+        flex-direction: column; }
+     .remBack{
+         width: 100vw;
+     }  
+     .text p {
+         line-height: 17px;
+     }
+     
+     #lowerContainer{
+         height: 350px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         margin-top: 36px;
+     }
+     
+     
+     #thirdContainer{
+         margin-top: 621px;
+         width: 100vw;
+     }
+     
+     .backg1{
+         display: block;
+     }
+}
+
+@media only screen and (max-width: 452px)
+{
+    .boxContainer{
+        flex-direction: column; }
+     .remBack{
+         width: 100vw;
+     }
+ 
+     .text p {
+         line-height: 17px;
+     }
+     
+     #lowerContainer{
+         height: 350px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         margin-top: 36px;
+     }
+     
+     #thirdContainer{
+         /* margin-top: 0px; */
+         flex-wrap: wrap;
+         width: 100vw;
+     }
+     
+     .backg1{
+         display: block;
+     }
+
+     .logo img{
+        width: 35px;
+        height: 35px;
+        margin: 5px;
+    }
+    .boxes{
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .boxes img{
+        margin: 0px;
+        width: 119px;
+        height: 100px;   
+    }
+    .logos{
+        justify-content: none;
+    }
+}
+
+ @media only screen and (max-width : 280px)
+{
+    #thirdContainer{
+    margin-top: 880px;  
+    }  
+
+    .navbar{
+        width: 80%;
+    }
+}
+
+ @media only screen and (max-width : 300px)
+{
+    #thirdContainer
+    {
+    margin-top: 800px; 
+    }
+
+    .logo img{
+        width: 25px;
+        height: 25px;
+        margin: 0px;
+    }
+}
